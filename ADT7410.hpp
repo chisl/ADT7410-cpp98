@@ -39,10 +39,10 @@ public:
 		/* Bits TLOWFLAG_LSB0: */
 		/*
 		 * Flags a TLOW event if the configuration register, Register Address 0x03[7] = 0 (13-bit resolution),
-		 *           and if comparator mode is selected through the configuration register, Register Address
-		 *           0x03[4]. When the temperature value is below TLOW, this bit it set to 1.
-		 *           Contains the Least Significant Bit 0 of the 15-bit temperature value if the configuration
-		 *           register, Register Address 0x03[7] = 1 (16-bit resolution). 
+		 * and if comparator mode is selected through the configuration register, Register Address
+		 * 0x03[4]. When the temperature value is below TLOW, this bit it set to 1.
+		 * Contains the Least Significant Bit 0 of the 15-bit temperature value if the configuration
+		 * register, Register Address 0x03[7] = 1 (16-bit resolution).
 		 */
 		struct TLOWFLAG_LSB0
 		{
@@ -52,10 +52,10 @@ public:
 		/* Bits THIGHFLAG_LSB1: */
 		/*
 		 * Flags a THIGH event if the configuration register, Register Address 0x03[7] = 0 (13-bit resolution),
-		 *           and if comparator mode is selected through the configuration register, Register Address
-		 *           0x03[4]. When the temperature value is above THIGH, this bit it set to 1.
-		 *           Contains the Least Significant Bit 1 of the 15-bit temperature value if the configuration
-		 *           register, Register Address 0x03[7] = 1 (16-bit resolution). 
+		 * and if comparator mode is selected through the configuration register, Register Address
+		 * 0x03[4]. When the temperature value is above THIGH, this bit it set to 1.
+		 * Contains the Least Significant Bit 1 of the 15-bit temperature value if the configuration
+		 * register, Register Address 0x03[7] = 1 (16-bit resolution).
 		 */
 		struct THIGHFLAG_LSB1
 		{
@@ -65,10 +65,10 @@ public:
 		/* Bits TCRITFLAG_LSB2: */
 		/*
 		 * Flags a TCRIT event if the configuration register, Register Address 0x03[7] = 0 (13-bit resolution),
-		 *           and if comparator mode is selected through the configuration register, Register Address
-		 *           0x03[4]. When the temperature value exceeds TCRIT, this bit it set to 1.
-		 *           Contains the Least Significant Bit 2 of the 15-bit temperature value if the configuration
-		 *           register, Register Address 0x03[7] = 1 (16-bit resolution). 
+		 * and if comparator mode is selected through the configuration register, Register Address
+		 * 0x03[4]. When the temperature value exceeds TCRIT, this bit it set to 1.
+		 * Contains the Least Significant Bit 2 of the 15-bit temperature value if the configuration
+		 * register, Register Address 0x03[7] = 1 (16-bit resolution).
 		 */
 		struct TCRITFLAG_LSB2
 		{
@@ -113,14 +113,14 @@ public:
 	/*
 	 * REG Status:
 	 * This 8-bit read-only register reflects the status of the overtemperature
-	 *       and undertemperature interrupts that can cause the CT and
-	 *       INT pins to go active. It also reflects the status of a temperature
-	 *       conversion operation. The interrupt flags in this register are
-	 *       reset by a read operation to the status register and/or when
-	 *       the temperature value returns within the temperature limits,
-	 *       including hysteresis. The RDY bit is reset after a read from the
-	 *       temperature value register. In one-shot and 1 SPS modes, the
-	 *       RDY bit is reset after a write to the one-shot bits. 
+	 * and undertemperature interrupts that can cause the CT and
+	 * INT pins to go active. It also reflects the status of a temperature
+	 * conversion operation. The interrupt flags in this register are
+	 * reset by a read operation to the status register and/or when
+	 * the temperature value returns within the temperature limits,
+	 * including hysteresis. The RDY bit is reset after a read from the
+	 * temperature value register. In one-shot and 1 SPS modes, the
+	 * RDY bit is reset after a write to the one-shot bits.
 	 */
 	struct Status
 	{
@@ -135,9 +135,9 @@ public:
 		/* Bits THIGH: */
 		/*
 		 * Set this bit to 1 when the temperature goes below the TLOW temperature limit, and if comparator
-		 *           mode is selected through the configuration register, Register Address 0x03[4]. The bit clears
-		 *           to 0 when the status register is read and/or when the temperature measured goes back above
-		 *           the limit set in the setpoint TLOW + THYST registers. 
+		 * mode is selected through the configuration register, Register Address 0x03[4]. The bit clears
+		 * to 0 when the status register is read and/or when the temperature measured goes back above
+		 * the limit set in the setpoint TLOW + THYST registers.
 		 */
 		struct THIGH
 		{
@@ -147,9 +147,9 @@ public:
 		/* Bits TLOW: */
 		/*
 		 * Set this bit to 1 when the temperature goes above the THIGH temperature limit, and if comparator
-		 *          mode is selected through the configuration register, Register Address 0x03[4]. The bit clears
-		 *          to 0 when the status register is read and/or when the temperature measured goes back
-		 *          below the limit set in the setpoint THIGH − THYST registers. 
+		 * mode is selected through the configuration register, Register Address 0x03[4]. The bit clears
+		 * to 0 when the status register is read and/or when the temperature measured goes back
+		 * below the limit set in the setpoint THIGH − THYST registers.
 		 */
 		struct TLOW
 		{
@@ -159,9 +159,9 @@ public:
 		/* Bits TCRIT: */
 		/*
 		 * Set this bit to 1 when the temperature goes above the TCRIT temperature limit, and if comparator
-		 *           mode is selected through the configuration register, Register Address 0x03[4]. This bit clears
-		 *           to 0 when the status register is read and/or when the temperature measured goes back
-		 *           below the limit set in the setpoint TCRIT − THYST registers. 
+		 * mode is selected through the configuration register, Register Address 0x03[4]. This bit clears
+		 * to 0 when the status register is read and/or when the temperature measured goes back
+		 * below the limit set in the setpoint TCRIT − THYST registers.
 		 */
 		struct TCRIT
 		{
@@ -171,8 +171,8 @@ public:
 		/* Bits nRDY: */
 		/*
 		 * This bit goes low when the temperature conversion result is written into the temperature
-		 *           value register. It is reset to 1 when the temperature value register is read. In one-shot and 1
-		 *           SPS modes, this bit is reset after a write to the one-shot bits. 
+		 * value register. It is reset to 1 when the temperature value register is read. In one-shot and 1
+		 * SPS modes, this bit is reset after a write to the one-shot bits.
 		 */
 		struct nRDY
 		{
@@ -203,9 +203,9 @@ public:
 	/*
 	 * REG Configuration:
 	 * This 8-bit read/write register stores various configuration modes
-	 *       for the ADT7410, including shutdown, overtemperature and
-	 *       undertemperature interrupts, one-shot, continuous conversion,
-	 *       interrupt pins polarity, and overtemperature fault queues. 
+	 * for the ADT7410, including shutdown, overtemperature and
+	 * undertemperature interrupts, one-shot, continuous conversion,
+	 * interrupt pins polarity, and overtemperature fault queues.
 	 */
 	struct Configuration
 	{
@@ -214,8 +214,8 @@ public:
 		/* Bits FAULT_QUEUE: */
 		/*
 		 * These two bits set the number of undertemperature/overtemperature faults that can
-		 *           occur before setting the INT and CT pins. This helps to avoid false triggering due
-		 *           to temperature noise. 
+		 * occur before setting the INT and CT pins. This helps to avoid false triggering due
+		 * to temperature noise.
 		 */
 		struct FAULT_QUEUE
 		{
@@ -297,13 +297,13 @@ public:
 	/*
 	 * REG THIGH:
 	 * The THIGH setpoint MSB and THIGH setpoint LSB registers store
-	 *       the overtemperature limit value. An overtemperature event
-	 *       occurs when the temperature value stored in the temperature
-	 *       value register exceeds the value stored in this register. The INT pin
-	 *       is activated if an overtemperature event occurs. The temperature
-	 *       is stored in twos complement format with the MSB being the
-	 *       temperature sign bit. 
-	 *       The default setting for the THIGH setpoint is 64°C. 
+	 * the overtemperature limit value. An overtemperature event
+	 * occurs when the temperature value stored in the temperature
+	 * value register exceeds the value stored in this register. The INT pin
+	 * is activated if an overtemperature event occurs. The temperature
+	 * is stored in twos complement format with the MSB being the
+	 * temperature sign bit.
+	 * The default setting for the THIGH setpoint is 64°C.
 	 */
 	struct THIGH
 	{
@@ -340,13 +340,13 @@ public:
 	/*
 	 * REG TLOW:
 	 * The TLOW setpoint MSB and TLOW setpoint LSB registers store
-	 *       the undertemperature limit value. An undertemperature event
-	 *       occurs when the temperature value stored in the temperature
-	 *       value register is less than the value stored in this register. The
-	 *       INT pin is activated if an undertemperature event occurs. The
-	 *       temperature is stored in twos complement format with the MSB
-	 *       being the temperature sign bit. 
-	 *       The default setting for the TLOW setpoint is 10°C. 
+	 * the undertemperature limit value. An undertemperature event
+	 * occurs when the temperature value stored in the temperature
+	 * value register is less than the value stored in this register. The
+	 * INT pin is activated if an undertemperature event occurs. The
+	 * temperature is stored in twos complement format with the MSB
+	 * being the temperature sign bit.
+	 * The default setting for the TLOW setpoint is 10°C.
 	 */
 	struct TLOW
 	{
@@ -383,13 +383,13 @@ public:
 	/*
 	 * REG TCRIT:
 	 * The TCRIT setpoint MSB and TCRIT setpoint LSB registers store
-	 *       the critical overtemperature limit value. A critical overtemperature
-	 *       event occurs when the temperature value stored in the
-	 *       temperature value register exceeds the value stored in this
-	 *       register. The CT pin is activated if a critical overtemperature
-	 *       event occurs. The temperature is stored in twos complement
-	 *       format with the MSB being the temperature sign bit. 
-	 *       The default setting for the TCRIT limit is 147°C. 
+	 * the critical overtemperature limit value. A critical overtemperature
+	 * event occurs when the temperature value stored in the
+	 * temperature value register exceeds the value stored in this
+	 * register. The CT pin is activated if a critical overtemperature
+	 * event occurs. The temperature is stored in twos complement
+	 * format with the MSB being the temperature sign bit.
+	 * The default setting for the TCRIT limit is 147°C.
 	 */
 	struct TCRIT
 	{
@@ -426,13 +426,13 @@ public:
 	/*
 	 * REG THYST:
 	 * This 8-bit read/write register stores the temperature hysteresis
-	 *       value for the THIGH, TLOW, and TCRIT temperature limits. The
-	 *       temperature hysteresis value is stored in straight binary format
-	 *       using four LSBs. Increments are possible in steps of 1°C from
-	 *       0°C to 15°C. The value in this register is subtracted from the
-	 *       THIGH and TCRIT values and added to the TLOW value to implement
-	 *       hysteresis.
-	 *       Default is 5°C. 
+	 * value for the THIGH, TLOW, and TCRIT temperature limits. The
+	 * temperature hysteresis value is stored in straight binary format
+	 * using four LSBs. Increments are possible in steps of 1°C from
+	 * 0°C to 15°C. The value in this register is subtracted from the
+	 * THIGH and TCRIT values and added to the TLOW value to implement
+	 * hysteresis.
+	 * Default is 5°C.
 	 */
 	struct THYST
 	{
@@ -440,8 +440,8 @@ public:
 		
 		/* Bits HYSTERESIS: */
 		/*
-		 * Hysteresis value, from 0°C to 15°C. Stored in straight binary format. 
-		 *           The default setting is 5°C. 
+		 * Hysteresis value, from 0°C to 15°C. Stored in straight binary format.
+		 * The default setting is 5°C.
 		 */
 		struct HYSTERESIS
 		{
@@ -487,9 +487,9 @@ public:
 		{
 			static const uint8_t mask = 0b00000111; // [0,1,2]
 		};
-		/* Bits MANUFACTUR_ID: */
+		/* Bits MANUFACTURER_ID: */
 		/* Manufacture ID Contains the manufacturer identification number  */
-		struct MANUFACTUR_ID
+		struct MANUFACTURER_ID
 		{
 			static const uint8_t dflt = 0b11001; // 5'b11001
 			static const uint8_t mask = 0b11111000; // [3,4,5,6,7]
@@ -518,9 +518,9 @@ public:
 	/*
 	 * REG RESET:
 	 * Software reset: Address pointer word as a command word to reset the part and
-	 *       upload all default settings. The ADT7410 does not respond to the I2
-	 *       C bus commands (do not acknowledge) during the default
-	 *       values upload for approximately 200 µs.
+	 * upload all default settings. The ADT7410 does not respond to the I2
+	 * C bus commands (do not acknowledge) during the default
+	 * values upload for approximately 200 µs.
 	 */
 	struct RESET
 	{
@@ -529,21 +529,21 @@ public:
 		/* Bits RESET: */
 		struct RESET_
 		{
-			/* Mode: */
-			static const uint8_t mask = 0b11111111; // [0,1,2,3,4,5,6,7]
+			/* Mode:wt */
+			static const uint8_t mask = 0b0; // []
 		};
 	};
 	
 	/* Set register RESET */
-	void setRESET(uint8_t value)
+	void setRESET()
 	{
-		write(RESET::__address, value, 8);
+		write(RESET::__address, uint8_t(0), 0);
 	}
 	
 	/* Get register RESET */
 	uint8_t getRESET()
 	{
-		return read8(RESET::__address, 8);
+		return read8(RESET::__address, 0);
 	}
 	
 };
